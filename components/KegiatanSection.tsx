@@ -8,7 +8,7 @@ const data = [
 export default function KegiatanSection() {
   return (
     <section id="kegiatan" className="sec">
-      <h2 className="mb-8 text-3xl font-bold">Agenda dan kegiatan</h2>
+      <h2 className="mb-8 text-3xl font-bold">Agenda dan kegiatan kegiatan</h2>
       <div className="grid gap-4 md:grid-cols-2">
         {data.map(([t, d, p, s]) => (
           <article key={t} className="flex items-start justify-between gap-4 rounded-2xl border border-forest/10 bg-cream2 p-5">
