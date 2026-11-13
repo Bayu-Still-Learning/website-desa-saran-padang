@@ -5,7 +5,7 @@ import L from 'leaflet'
 import { MapContainer, Marker, TileLayer, Tooltip } from 'react-leaflet'
 
 // Koordinat pusat desa. Sesuaikan jika pin belum tepat di kantor desa.
-const CENTER: [number, number] = [3.0167, 98.7167]
+const CENTER: [number, number] = [3.045916, 98.690987]
 
 const pin = L.divIcon({
   className: '',
