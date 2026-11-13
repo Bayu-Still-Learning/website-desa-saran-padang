@@ -1,3 +1,11 @@
+'use client'
+import dynamic from 'next/dynamic'
+
+const MapDesa = dynamic(() => import('./MapDesa'), {
+  ssr: false,
+  loading: () => <div className="h-full w-full rounded-2xl bg-cream/10" />,
+})
+
 export default function Footer() {
   return (
     <footer id="kontak" className="bg-forest text-cream">
@@ -7,9 +15,15 @@ export default function Footer() {
           <p className="mt-2">Kec. Dolok Silau, Kab. Simalungun, Sumatera Utara</p>
           {/* Ganti nomor dengan WhatsApp resmi desa */}
           <a className="btn btn-alt mt-6" href="https://wa.me/6280000000000?text=Halo%20Pemerintah%20Desa%20Saran%20Padang">Hubungi lewat WhatsApp</a>
-          <nav className="mt-6 flex gap-5 text-sm"><a href="/sejarah" className="underline">Sejarah</a><a href="/#kegiatan" className="underline">Kegiatan</a><a href="/#surat" className="underline">Layanan surat</a></nav>
+          <nav className="mt-6 flex gap-5 text-sm">
+            <a href="/sejarah" className="underline">Sejarah</a>
+            <a href="/#kegiatan" className="underline">Kegiatan</a>
+            <a href="/#surat" className="underline">Layanan surat</a>
+          </nav>
         </div>
-        <iframe title="Peta Desa Saran Padang" className="h-60 w-full rounded-2xl" loading="lazy" src="https://maps.google.com/maps?q=Dolok+Silau,+Simalungun&output=embed" />
+        <div className="h-60 w-full">
+          <MapDesa />
+        </div>
       </div>
       <p className="pb-6 text-center text-xs opacity-70">© 2026 Pemerintah Desa Saran Padang</p>
     </footer>
