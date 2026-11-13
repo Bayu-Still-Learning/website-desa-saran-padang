@@ -1,5 +1,5 @@
 const data = [
-  ['Marharoan Bolon (gotong royong)', '22 Nov 2026', 'Balai Desa', 'Akan Datang'],
+  ['Gendang Guro-Guro Aron', '06-07 Juli 2026', 'Losd Desa Saran Padang', 'Selesai'],
   ['Musyawarah Desa RKPDes 2027', '5 Des 2026', 'Balai Desa', 'Akan Datang'],
   ['Posyandu Balita & Lansia', '18 Nov 2026', 'Dusun II', 'Akan Datang'],
   ['Pertemuan Karang Taruna', '25 Okt 2026', 'Sekretariat', 'Selesai'],

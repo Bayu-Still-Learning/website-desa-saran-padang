@@ -2,8 +2,22 @@
 import { animate, useInView } from 'framer-motion'
 import { useEffect, useRef } from 'react'
 function Count({ to, suffix = '' }: { to: number; suffix?: string }) {
-  const ref = useRef<HTMLSpanElement>(null); const inView = useInView(ref, { once: true })
-  useEffect(() => { if (inView && ref.current) { const c = animate(0, to, { duration: 1.6, onUpdate: v => { ref.current!.textContent = Math.round(v).toLocaleString('id-ID') + suffix } }); return () => c.stop() } }, [inView, to, suffix])
+  const ref = useRef<HTMLSpanElement>(null)
+  const inView = useInView(ref, { once: true })
+
+  useEffect(() => {
+    if (!inView || !ref.current) return
+    const c = animate(0, to, {
+      duration: 1.6,
+      onUpdate: (v) => {
+        if (ref.current) {
+          ref.current.textContent = `${Math.round(v).toLocaleString('id-ID')}${suffix}`
+        }
+      },
+    })
+    return () => c.stop()
+  }, [inView, to, suffix])
+
   return <span ref={ref}>0</span>
 }
 // Angka contoh. Ganti dengan data resmi desa.
